@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesRegister.css">
+    <link href="http://fonts.cdnfonts.com/css/sf-pixelate" rel="stylesheet">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+</head>
+<body onload="register.init()">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="my-div mx-auto">
+                    <h1>Ingrese el nombre</h1>
+                    <input type="text" id="nombreInput" placeholder="Escriba su nombre" required>
+                    <button type="submit" onclick="register.publishGamer($('#nombreInput').val())">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-pixel-container">
+        <!-- Contenedor inferior -->
+    </div>
+    <script src="js/register.js"></script>
+    <script src="js/registerFront.js"></script>
+</body>
+</html>

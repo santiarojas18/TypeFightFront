@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeFight</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="http://fonts.cdnfonts.com/css/sf-pixelate" rel="stylesheet">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+</head>
+<body onload="app.init()">
+<div class="container">
+    <div class="life-bar">
+        <div class="life-fill" id="lifeFill">
+            <div class="life-text" id="lifeText">100</div>
+        </div>
+    </div>    
+    <div class="center-container">
+        <div class="word-grid" id="wordGridContainer"></div>
+    </div>
+    <div class="top-pixel-container">
+        <!-- Contenedor superior -->
+    </div>
+    <div class="bottom-pixel-container">
+        <!-- Contenedor inferior -->
+    </div>
+    <div class="wordContainer">
+        <div id="userWord"></div>
+    </div>
+</div>
+<script src="js/front.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    font-family: 'SF Pixelate', sans-serif;
+}
+
+#winner-title {
+    margin-top: 100px; /* Espacio personalizado entre el título y la tabla */
+}
+
+.custom-table {
+    margin-top: 100px; /* Espacio personalizado entre el título y la tabla */
+    border: 2px solid #000 !important; /* Agrega "solid" para el estilo del borde */
+}
+
+.custom-button {
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
