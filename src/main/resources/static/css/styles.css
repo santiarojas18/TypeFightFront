@@ -1,5 +1,7 @@
 /* Estilos generales */
 body {
+    background-image: url('/jpg/Ring8.jpg'); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,6 +12,10 @@ body {
 
 h1 {
     font-family: 'SF Pixelate', sans-serif;
+    position: absolute;
+    top: calc(100% + 0px);
+    color: white;
+    font-size: 32px !important;
 }
 
 .container {
@@ -42,16 +48,24 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80px; /* Ancho fijo en píxeles de cada subcontenedor (16 píxeles de 5x5) */
-    height: 80px; /* Altura fija en píxeles de cada subcontenedor (16 filas de 5x5) */
+    width: 112px; /* Ancho fijo en píxeles de cada subcontenedor (16 píxeles de 5x5) */
+    height: 112px; /* Altura fija en píxeles de cada subcontenedor (16 filas de 5x5) */
     justify-content: center; /* Alinear hacia el inicio para que los contenedores estén juntos */
     align-content: flex-start; /* Alineación vertical para que las filas estén justo debajo de otras */
     margin: 70px;
+    position: relative;
+    color: white;
+    color: white; /* Establece el color del texto en blanco */
+    text-shadow:
+        -2px -2px 0 #000,  /* Borde superior-izquierdo */
+        2px -2px 0 #000,   /* Borde superior-derecho */
+        -2px 2px 0 #000,   /* Borde inferior-izquierdo */
+        2px 2px 0 #000;    /* Borde inferior-derecho */
 }
 
 .row-container .pixel {
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     margin: 0;
     padding: 0;
 }
@@ -63,6 +77,13 @@ h1 {
     margin-bottom: 10vh; /* Margen inferior */
     font-family: 'SF Pixelate', sans-serif;
     font-size: 1.5em; /* Tamaño de fuente */
+    color: white;
+    color: white; /* Establece el color del texto en blanco */
+    text-shadow:
+        -2px -2px 0 #000,  /* Borde superior-izquierdo */
+        2px -2px 0 #000,   /* Borde superior-derecho */
+        -2px 2px 0 #000,   /* Borde inferior-izquierdo */
+        2px 2px 0 #000;    /* Borde inferior-derecho */
 }
 
 .word-grid {
@@ -81,20 +102,26 @@ h1 {
     white-space: nowrap;
     font-family: 'SF Pixelate', sans-serif;
     font-size: 1.3em; /* Tamaño de fuente */
+    color: white; /* Establece el color del texto en blanco */
+      text-shadow:
+        -2px -2px 0 #000,  /* Borde superior-izquierdo */
+        2px -2px 0 #000,   /* Borde superior-derecho */
+        -2px 2px 0 #000,   /* Borde inferior-izquierdo */
+        2px 2px 0 #000;    /* Borde inferior-derecho */
     
 }
 
 /* Estilos para la barra de vida */
 .life-bar {
-    width: 500px; /* Ancho personalizado de la barra de vida */
-    height: 30px; /* Altura personalizada de la barra de vida */
+    width: 160px; /* Ancho personalizado de la barra de vida */
+    height: 20px; /* Altura personalizada de la barra de vida */
     background-color: #efe5e5; /* Color de fondo rojo */
     border: 1px solid #000; /* Borde de la barra de vida */
     border-radius: 15px; /* Bordes redondeados */
     overflow: hidden; /* Para ocultar el exceso de vida */
     position: absolute;
-    top: 20px; /* Ajusta la posición verticalmente */
-    right: 20px; /* Ajusta la posición horizontalmente */
+    top: calc(100% + 50px); /* Ajusta la posición verticalmente */
+    /* right: 20px; /* Ajusta la posición horizontalmente */
 }
 
 .life-fill {
@@ -108,8 +135,9 @@ h1 {
     position: absolute; /* Posiciona el número en relación con el elemento padre (life-bar) */
     top: 50%; /* Lo coloca verticalmente en el centro */
     left: 50%; /* Lo coloca horizontalmente en el centro */
-    transform: translate(-50%, -50%); /* Centra el número */
-    color: #fff; /* Color del número (blanco) */
-    font-size: 16px; /* Tamaño de fuente del número */
+    transform: translate(-50%, -50%);  /* Centra el número */
+    color: white; /* Color del número (blanco) */
+    font-size: 15px; /* Tamaño de fuente del número */
+    font-family: 'SF Pixelate', sans-serif;
 }
 
