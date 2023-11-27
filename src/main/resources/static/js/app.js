@@ -92,7 +92,7 @@ var app = (function () {
     var connectAndSubscribe = function () {
         return new Promise(function (resolve, reject) {
             console.info('Connecting to WS...');
-            var socket = new SockJS('/stompendpoint');
+            var socket = new SockJS('typefightback.azurewebsites.net/stompendpoint');
             stompClient = Stomp.over(socket);
 
             stompClient.connect({}, function (frame) {
