@@ -13,7 +13,7 @@ var register = (function () {
 
     var connectAndSubscribe = function () {
         console.info('Connecting to WS...');
-        var socket = new SockJS('typefightback.azurewebsites.net/stompendpoint');
+        var socket = new SockJS('typefightbackendpool.eastus.cloudapp.azure.com/stompendpoint');
         stompClient = Stomp.over(socket);
 
         stompClient.connect({}, function (frame) {

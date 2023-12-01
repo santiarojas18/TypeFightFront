@@ -39,7 +39,7 @@ function changePixels() {
             }
         }
     }
-    addNames();
+    addNamesAndLifeBars();
 }
 
 function setPlayersNumber (number, newPlayers) {
@@ -47,15 +47,46 @@ function setPlayersNumber (number, newPlayers) {
     playersList = newPlayers;
 }
 
-function addNames () {
+function updatePlayersList (playersUpdatedLife) {
+    playersList = playersUpdatedLife;
+    addNamesAndLifeBars();
+}
+
+function addNamesAndLifeBars () {
     const pixelContainers = document.querySelectorAll('.row-container');
     var containerForAvatar;
     for (let i = 0; i < playersNumber; i++) {
         containerForAvatar = pixelContainers[playersNumber - (i + 1)];
         const h1 = document.createElement('h1');
         h1.textContent = playersList[i].name;
+        const lifeBar = document.createElement('div');
+        lifeBar.className = 'life-bar';
+        const lifeFill = document.createElement('div');
+        lifeFill.className = 'life-fill';
+        lifeFill.id = 'lifeFill';
+        const lifeText = document.createElement('div');
+        lifeText.className = 'life-text';
+        lifeText.id = 'lifeText';
+
+        updateLifeBar(playersList[i].health, lifeFill, lifeText);
         containerForAvatar.appendChild(h1);
+        containerForAvatar.appendChild(lifeBar);
+        lifeBar.appendChild(lifeFill);
+        lifeFill.appendChild(lifeText);
+
     }
+}
+
+function updateLifeBar (playerLife, playerLifeFill, playerLifeText) {
+    var lifeFill = playerLifeFill;
+    var lifeText = playerLifeText;
+    var lifePercentage = (playerLife / 100) * 100; // Ajusta el 100 según el rango de vida máximo
+
+    // Actualiza el ancho de la barra de vida
+    lifeFill.style.width = lifePercentage + "%";
+
+    // Actualiza el número de vida
+    lifeText.textContent = playerLife;
 }
 
 // Cambiar los píxeles cada segundo (1000 ms)

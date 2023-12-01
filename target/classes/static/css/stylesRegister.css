@@ -1,4 +1,6 @@
 body {
+    background-image: url('/jpg/Ring8.jpg'); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'SF Pixelate', sans-serif;
+    color: white;
 }
 
 .top-pixel-container, .bottom-pixel-container {

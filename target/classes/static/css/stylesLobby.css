@@ -1,4 +1,6 @@
 body {
+    background-image: url('/jpg/Ring8.jpg'); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,6 +11,7 @@ body {
 
 h1 {
     font-family: 'SF Pixelate', sans-serif;
+    color: white;
 }
 
 #button-to-play button {
@@ -24,6 +27,7 @@ h1 {
     display: flex;
     flex-direction: column;
     font-family: 'SF Pixelate', sans-serif;
+    color: white;
 }
 
 .top-pixel-container, .bottom-pixel-container {
@@ -53,6 +57,13 @@ h1 {
     justify-content: center; /* Alinear hacia el inicio para que los contenedores estén juntos */
     align-content: flex-start; /* Alineación vertical para que las filas estén justo debajo de otras */
     margin: 70px;
+    font-weight: bold; /* Establece el texto en negrita */
+    color: white; /* Establece el color del texto en blanco */
+    text-shadow:
+        -2px -2px 0 #000,  /* Borde superior-izquierdo */
+        2px -2px 0 #000,   /* Borde superior-derecho */
+        -2px 2px 0 #000,   /* Borde inferior-izquierdo */
+        2px 2px 0 #000;    /* Borde inferior-derecho */
 }
 
 .row-container .pixel {
