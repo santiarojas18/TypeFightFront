@@ -10,6 +10,7 @@
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
     <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <script src="/webjars/dompurify/3.0.6/dist/purify.min.js"></script>
 </head>
 <body onload="register.init()">
     <div class="container">
@@ -18,7 +19,7 @@
                 <div class="my-div mx-auto">
                     <h1>Ingrese el nombre</h1>
                     <input type="text" id="nombreInput" placeholder="Escriba su nombre" required>
-                    <button type="submit" onclick="register.publishGamer($('#nombreInput').val())">Ingresar</button>
+                    <button type="submit" onclick="register.publishGamer(sanitizeInput())">Ingresar</button>
                 </div>
             </div>
         </div>

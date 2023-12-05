@@ -49,8 +49,13 @@ var app = (function () {
             const newWord = currentWord.slice(0, -1); // Elimina el último carácter.
             userWord.textContent = newWord;
         } else if (event.key === "Enter") {
-            // publicar palabra cuando se presiona Enter.
-            app.publishWrittenWord(userWord.textContent);
+            // publicar palabra cuando se presiona Enter y sanitización de entradas.
+            var userInput = userWord.textContent;
+            var inputToSanitize = DOMPurify.sanitize(userInput);
+            var sanitizedInput = inputToSanitize.replace(/[<>]/g, '');
+            console.log('Entrada original:', userInput);
+            console.log('Entrada sanitizada:', sanitizedInput);
+            app.publishWrittenWord(sanitizedInput);
         }
     };
 

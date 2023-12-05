@@ -1,3 +1,12 @@
+function sanitizeInput() {
+    var userInput = $('#nombreInput').val();
+    var inputToSanitize = DOMPurify.sanitize(userInput);
+    var sanitizedInput = inputToSanitize.replace(/[<>]/g, '');
+    console.log('Entrada original:', userInput);
+    console.log('Entrada sanitizada:', sanitizedInput);
+    return sanitizedInput;
+}
+
 var register = (function () {
 
     var stompClient = null;
