@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>TypeFight</name>
+    <name>TypeFightFront</name>
     <description>Web application with real time and concurrency</description>
 
     <parent>
