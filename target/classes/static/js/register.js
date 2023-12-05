@@ -31,7 +31,7 @@ var register = (function () {
                 var nameUsed = JSON.parse(eventbody.body);
                 console.log(nameUsed);
                 if (nameUsed) {
-                    var name = $('#nombreInput').val();
+                    var name = sanitizeInput();
                     console.log(nameUsed);
                     var message = "Ya existe un jugador con el nombre de: " + name + ". Inserte otro nombre.";
                     alert(message);
