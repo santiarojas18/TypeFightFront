@@ -19,24 +19,6 @@ var app = (function () {
         }
     };
 
-    var getMousePosition = function (evt) {
-        canvas = document.getElementById("canvas");
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-        };
-    };
-
-    var getMousePositionWithPage = function (evt) {
-        canvas = document.getElementById("canvas");
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.pageX - rect.left,
-            y: evt.pageY - rect.top
-        };
-    };
-
     const listenerForWritting = function (event) {
         if (event.key.length === 1) {
             // Solo se procesa la entrada si es una letra (no se procesan teclas especiales, números, etc.).
@@ -175,7 +157,6 @@ var app = (function () {
             }
 
             setParameters();
-            //updateLifeBar();
 
             //disconnect connection
             app.disconnect();
@@ -188,7 +169,6 @@ var app = (function () {
 
         publishWrittenWord: function(writtenWord){
             console.info("The word written is "+ writtenWord);
-            //addPointToCanvas(pt);
 
             var message = {
                 username: username,
@@ -208,7 +188,7 @@ var app = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            //setConnected(false);
+            
             console.log("Disconnected");
         }
     };
