@@ -68,7 +68,7 @@ var register = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            
+
             console.log("Disconnected");
         }
     };
