@@ -1,7 +1,6 @@
 var lobby = (function () {
 
     var stompClient = null;
-    var listenersAdded = false;
 
     var connectAndSubscribe = function () {
         return new Promise(function (resolve, reject) {
@@ -56,7 +55,7 @@ var lobby = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            //setConnected(false);
+
             console.log("Disconnected");
         }
     };

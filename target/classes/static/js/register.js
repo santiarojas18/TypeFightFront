@@ -10,7 +10,6 @@ function sanitizeInput() {
 var register = (function () {
 
     var stompClient = null;
-    var listenersAdded = false;
     var uniqueId;
 
     function getRandomInt(min = 1, max = 100000) {
@@ -69,7 +68,7 @@ var register = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            //setConnected(false);
+            
             console.log("Disconnected");
         }
     };
