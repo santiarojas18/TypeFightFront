@@ -25,7 +25,7 @@
         <sonar.organization>santiarojas18</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.branch>main</sonar.branch>
-        <sonar.sources>src/js</sonar.sources>
+        <sonar.sources>src/main/resources/static/js</sonar.sources>
     </properties>
 
     <dependencies>
