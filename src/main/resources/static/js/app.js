@@ -5,7 +5,6 @@ var app = (function () {
     var paintedWords = [];
     var listenersAdded = false;
     var username;
-    var life = 100;
     const userWord = document.getElementById("userWord");
 
     var setParameters = function(){
@@ -188,7 +187,7 @@ var app = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            
+
             console.log("Disconnected");
         }
     };
