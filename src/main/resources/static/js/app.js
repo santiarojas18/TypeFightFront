@@ -70,10 +70,7 @@ var app = (function () {
                 // Agrega la palabra a la lista de palabras pintadas
                 paintedWords.push({ row: row, column: column, word: word });
             }
-            paintedWords = paintedWords.filter(function (position) {
-                return currentWords.includes(position.word);
-            });
-            
+
             // Elimina las palabras que ya no están en currentWords de la vista
             paintedWords.forEach(function (position) {
                 if (!currentWords.includes(position.word)) {
@@ -83,6 +80,12 @@ var app = (function () {
                     }
                 }
             });
+
+            paintedWords = paintedWords.filter(function (position) {
+                return currentWords.includes(position.word);
+            });
+            
+
         });
     };
     
