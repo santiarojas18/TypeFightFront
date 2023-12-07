@@ -78,7 +78,7 @@ var ranking = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            //setConnected(false);
+
             console.log("Disconnected");
         }
     };

@@ -5,7 +5,6 @@ var app = (function () {
     var paintedWords = [];
     var listenersAdded = false;
     var username;
-    var life = 100;
     const userWord = document.getElementById("userWord");
 
     var setParameters = function(){
@@ -17,24 +16,6 @@ var app = (function () {
             // El nombre del usuario no se encuentra en SessionStorage
             console.log("Usuario no registrado");
         }
-    };
-
-    var getMousePosition = function (evt) {
-        canvas = document.getElementById("canvas");
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-        };
-    };
-
-    var getMousePositionWithPage = function (evt) {
-        canvas = document.getElementById("canvas");
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.pageX - rect.left,
-            y: evt.pageY - rect.top
-        };
     };
 
     const listenerForWritting = function (event) {
@@ -49,8 +30,13 @@ var app = (function () {
             const newWord = currentWord.slice(0, -1); // Elimina el último carácter.
             userWord.textContent = newWord;
         } else if (event.key === "Enter") {
-            // publicar palabra cuando se presiona Enter.
-            app.publishWrittenWord(userWord.textContent);
+            // publicar palabra cuando se presiona Enter y sanitización de entradas.
+            var userInput = userWord.textContent;
+            var inputToSanitize = DOMPurify.sanitize(userInput);
+            var sanitizedInput = inputToSanitize.replace(/[<>]/g, '');
+            console.log('Entrada original:', userInput);
+            console.log('Entrada sanitizada:', sanitizedInput);
+            app.publishWrittenWord(sanitizedInput);
         }
     };
 
@@ -183,7 +169,6 @@ var app = (function () {
             }
 
             setParameters();
-            //updateLifeBar();
 
             //disconnect connection
             app.disconnect();
@@ -196,7 +181,6 @@ var app = (function () {
 
         publishWrittenWord: function(writtenWord){
             console.info("The word written is "+ writtenWord);
-            //addPointToCanvas(pt);
 
             var message = {
                 username: username,
@@ -216,7 +200,7 @@ var app = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            //setConnected(false);
+
             console.log("Disconnected");
         }
     };

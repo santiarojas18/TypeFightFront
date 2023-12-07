@@ -1,7 +1,15 @@
+function sanitizeInput() {
+    var userInput = $('#nombreInput').val();
+    var inputToSanitize = DOMPurify.sanitize(userInput);
+    var sanitizedInput = inputToSanitize.replace(/[<>]/g, '');
+    console.log('Entrada original:', userInput);
+    console.log('Entrada sanitizada:', sanitizedInput);
+    return sanitizedInput;
+}
+
 var register = (function () {
 
     var stompClient = null;
-    var listenersAdded = false;
     var uniqueId;
 
     function getRandomInt(min = 1, max = 100000) {
@@ -22,7 +30,7 @@ var register = (function () {
                 var nameUsed = JSON.parse(eventbody.body);
                 console.log(nameUsed);
                 if (nameUsed) {
-                    var name = $('#nombreInput').val();
+                    var name = sanitizeInput();
                     console.log(nameUsed);
                     var message = "Ya existe un jugador con el nombre de: " + name + ". Inserte otro nombre.";
                     alert(message);
@@ -60,7 +68,7 @@ var register = (function () {
             if (stompClient !== null) {
                 stompClient.disconnect();
             }
-            //setConnected(false);
+            
             console.log("Disconnected");
         }
     };

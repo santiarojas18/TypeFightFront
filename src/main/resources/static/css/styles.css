@@ -54,7 +54,6 @@ h1 {
     align-content: flex-start; /* Alineación vertical para que las filas estén justo debajo de otras */
     margin: 70px;
     position: relative;
-    color: white;
     color: white; /* Establece el color del texto en blanco */
     text-shadow:
         -2px -2px 0 #000,  /* Borde superior-izquierdo */
@@ -77,7 +76,6 @@ h1 {
     margin-bottom: 10vh; /* Margen inferior */
     font-family: 'SF Pixelate', sans-serif;
     font-size: 1.5em; /* Tamaño de fuente */
-    color: white;
     color: white; /* Establece el color del texto en blanco */
     text-shadow:
         -2px -2px 0 #000,  /* Borde superior-izquierdo */
