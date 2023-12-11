@@ -5,6 +5,7 @@ var app = (function () {
     var paintedWords = [];
     var listenersAdded = false;
     var username;
+    var countAlert = 1;
     const userWord = document.getElementById("userWord");
 
     var setParameters = function(){
@@ -131,9 +132,10 @@ var app = (function () {
 
                 stompClient.subscribe('/topic/gameOver.' + username, function (eventbody) {
                     var life=JSON.parse(eventbody.body);
-                    if (life <= 0) {
+                    if (life <= 0 && countAlert == 1) {
                         document.removeEventListener("keydown", listenerForWritting);
                         var message = "Usted ha muerto.";
+                        countAlert += 1;
                         alert(message);
                     }
                 });
