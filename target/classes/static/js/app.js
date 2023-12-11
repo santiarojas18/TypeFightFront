@@ -6,6 +6,7 @@ var app = (function () {
     var listenersAdded = false;
     var username;
     var countAlert = 1;
+    var countThereIsAWinner = 1;
     const userWord = document.getElementById("userWord");
 
     var setParameters = function(){
@@ -141,13 +142,17 @@ var app = (function () {
                 });
 
                 stompClient.subscribe('/topic/thereIsAWinner', function (eventbody) {
-                    var theWinner = JSON.parse(eventbody.body);
-                    var playerName = theWinner.name;
-                    var message = "El ganador es: " + playerName ;
-                    alert(message);
+                    if(countThereIsAWinner == 1){
+                        var theWinner = JSON.parse(eventbody.body);
+                        var playerName = theWinner.name;
+                        var message = "El ganador es: " + playerName ;
+                        alert(message);
+                        countThereIsAWinner += 1;
+    
+                        // Redirige a otra página después de que el usuario haga clic en "Aceptar" en el alert
+                        window.location.href = 'ranking.html';
+                    }
 
-                    // Redirige a otra página después de que el usuario haga clic en "Aceptar" en el alert
-                    window.location.href = 'ranking.html';
                 });
 
                 stompClient.subscribe('/topic/newentrygame', function (eventbody) {
